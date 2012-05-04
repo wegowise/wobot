@@ -1,1 +1,1 @@
-app: bin/hubot -a irc -n wobot
+app: bin/hubot -a hipchat -n wobot
