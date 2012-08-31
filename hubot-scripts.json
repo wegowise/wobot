@@ -36,6 +36,7 @@
   "google.coffee",
   "haters.coffee",
   "heroku-status.coffee",
+  "heroku-releases.coffee",
   "isup.coffee",
   "likeaboss.coffee",
   "lyrics.coffee",
