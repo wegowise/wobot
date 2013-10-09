@@ -26,9 +26,10 @@ who_last_deployed = (msg, releases, application) ->
   username = switch
     when /stawarz/.test(user) then '@ryan'
     when /dewyea/.test(user) then '@jed'
-    when /method/.test(user) then '@joe'
+    when /method/.test(user) then '@method'
     when /nathan/.test(user) then '@nathan'
     when /singh/.test(user) then '@barun'
+    when /cutler/.test(user) then '@cutler'
     when /infras/.test(user) then "the masked man known as 'infrastructure'"
     else release.user
 
