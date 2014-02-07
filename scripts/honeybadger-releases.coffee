@@ -52,7 +52,9 @@ module.exports = (robot) ->
     honeybadger_projects(msg, app_name, honeybadger_releases)
 
   robot.hear /(anyone using|anybody using|who deployed) ([\w]+)/i, (msg) ->
-    msg.send "Stand back, I got this..."
     app_name = msg.match[2]
     app_name = process.env.HONEYBADGER_DEFAULT_APP if app_name == 'staging'
-    honeybadger_projects(msg, app_name, honeybadger_releases)
+    if !app_name.match(/chartio/i)
+      msg.send "Stand back, I got this..."
+      honeybadger_projects(msg, app_name, honeybadger_releases)
+
