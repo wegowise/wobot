@@ -43,8 +43,24 @@ honeybadger_last_release = (msg, releases, application) ->
     if release.environment == 'staging'
       user = release.local_username
       created_at = new Date(release.created_at)
-      msg.send "#{user} deployed #{application}-staging last on #{created_at.toLocaleString()}"
+      msg.send "#{user} deployed #{application}-staging #{time_since(created_at)} ago."
       return
+
+time_since = (date) ->
+  seconds = Math.floor((new Date() - date) / 1000)
+  interval = Math.floor(seconds / 86400)
+  if (interval > 1)
+    return "#{interval} days"
+
+  interval = Math.floor(seconds / 3600)
+  if (interval > 1)
+    return "#{interval} hours"
+
+  interval = Math.floor(seconds / 60)
+  if (interval > 1)
+    return "#{interval} minutes"
+
+  return "#{Math.floor(seconds)} seconds"
 
 module.exports = (robot) ->
   robot.respond /releases ([\w]+)/i, (msg) ->
@@ -57,4 +73,3 @@ module.exports = (robot) ->
     if !app_name.match(/chartio/i)
       msg.send "Stand back, I got this..."
       honeybadger_projects(msg, app_name, honeybadger_releases)
-
