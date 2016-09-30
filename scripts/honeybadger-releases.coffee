@@ -67,7 +67,7 @@ module.exports = (robot) ->
     app_name = msg.match[1]
     honeybadger_projects(msg, app_name, honeybadger_releases)
 
-  robot.hear /(anyone using|anybody using|who deployed) ([\w]+)/i, (msg) ->
+  robot.hear /(anyone using|anyone in|anybody using|anybody in|who deployed) ([\w]+)/i, (msg) ->
     app_name = msg.match[2]
     app_name = process.env.HONEYBADGER_DEFAULT_APP if app_name == 'staging'
     if app_name.match(/chartio/i)
