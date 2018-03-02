@@ -19,7 +19,7 @@ parse_results = (body) ->
   JSON.parse(body).results
 
 honeybadger_projects = (msg, application, callback) ->
-  msg.robot.http("https://api.honeybadger.io/v1/projects?auth_token=#{hb_token}")
+  msg.robot.http("https://api.honeybadger.io/v2/projects?auth_token=#{hb_token}")
     .get() (err, res, body) ->
       if err
         msg.send "Honeybadger don't care."
@@ -31,7 +31,7 @@ honeybadger_projects = (msg, application, callback) ->
 
 
 honeybadger_releases = (msg, app_id, app_name) ->
-  msg.robot.http("https://api.honeybadger.io/v1/projects/#{app_id}/deploys?auth_token=#{hb_token}")
+  msg.robot.http("https://api.honeybadger.io/v2/projects/#{app_id}/deploys?auth_token=#{hb_token}")
     .get() (err, res, body) ->
       if err
         msg.send "Honeybadger don't care."
