@@ -1,6 +1,8 @@
 #!/bin/sh
 
-npm install
+set -e
+
+npm install --no-progress -q
 export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
 
-exec node_modules/.bin/hubot "$@"
+exec node_modules/.bin/hubot --name "wobot" "$@"

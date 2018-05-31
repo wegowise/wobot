@@ -1,7 +1,9 @@
-# Tell wobot to shut up by flipping shut_up in his brain
+# Description:
+#   Tell wobot to shut up by flipping shut_up in his brain
 #
-# shut up - Tells wobot to shut up
-# speak up - Tells wobot to not shut up
+# Commands:
+#   shut up - Tells wobot to shut up
+#   speak up - Tells wobot to not shut up
 
 module.exports = (robot) ->
   robot.hear /shut up$/, (msg) ->

@@ -1,1 +1,16 @@
-[]
+[
+  "hubot-ascii-art",
+  "hubot-coin",
+  "hubot-diagnostics",
+  "hubot-help",
+  "hubot-google",
+  "hubot-google-images",
+  "hubot-google-translate",
+  "hubot-isup",
+  "hubot-pugme",
+  "hubot-maps",
+  "hubot-redis-brain",
+  "hubot-rules",
+  "hubot-shipit",
+  "hubot-tell"
+]
